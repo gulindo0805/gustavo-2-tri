@@ -1,1 +1,73 @@
-m,vc ,lmkbgmnsgn
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tabela em JavaScript</title>
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+</style>
+</head>
+<body>
+
+<h2>Tabela criada com JavaScript</h2>
+
+<table id="minhaTabela">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Idade</th>
+      <th>Cidade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>João</td>
+      <td>25</td>
+      <td>São Paulo</td>
+    </tr>
+    <tr>
+      <td>Maria</td>
+      <td>30</td>
+      <td>Rio de Janeiro</td>
+    </tr>
+    <tr>
+      <td>Carlos</td>
+      <td>35</td>
+      <td>Brasília</td>
+    </tr>
+  </tbody>
+</table>
+
+<script>
+  // JavaScript para adicionar uma linha à tabela
+  function adicionarLinha() {
+    var table = document.getElementById("minhaTabela").getElementsByTagName('tbody')[0];
+    var newRow = table.insertRow(table.rows.length);
+    var cells = [];
+
+    for (var i = 0; i < 3; i++) {
+      cells.push(newRow.insertCell(i));
+    }
+
+    cells[0].innerHTML = "Novo Nome";
+    cells[1].innerHTML = "40";
+    cells[2].innerHTML = "Nova Cidade";
+  }
+</script>
+
+<button onclick="adicionarLinha()">Adicionar Linha</button>
+
+</body>
+</html>
