@@ -8,5 +8,70 @@
     <link rel="stylesheet" href="agrinho.css">
 </head>
 <body>
-    <h1>hjrjklgl</h1>
+    <header id="cabecalho" class="cabecalho">
+        <!-- Carrossel no cabeçalho -->
+        <div class="cabecalho-carrossel">
+            <div class="carrossel" id="carrosselCabecalho">
+                <!-- Slides do carrossel -->
+                <div class="carrossel-item">
+                    <img src="https://s2-techtudo.glbimg.com/SSAPhiaAy_zLTOu3Tr3ZKu2H5vg=/0x0:1024x609/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2022/c/u/15eppqSmeTdHkoAKM0Uw/dall-e-2.jpg" alt="Imagem 1">
+                </div>
+                <div class="carrossel-item">
+                    <img src="https://amazonasfc.com.br/wp-content/uploads/2023/04/logo-amazonasfc.png" alt="Imagem 2">
+                </div>
+                <div class="carrossel-item">
+                    <img src="https://veja.abril.com.br/wp-content/uploads/2023/10/Amazonas-FC-3.jpg?quality=90&strip=info&w=720&h=440&crop=1" alt="Imagem 3">
+                </div>
+            </div>
+        </div>
+        <!-- Fim do Carrossel no cabeçalho -->
+
+        <!-- Restante do cabeçalho -->
+        <nav class="cabecalho-nav">
+            <ul class="cabecalho-lista">
+                <li class="cabecalho-lista-item"><a href="#">Home</a></li>
+                <li class="cabecalho-lista-item"><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+        <button class="nav-button" onclick="openNav()">
+            <i class="fa-solid fa-bars fa-2x"></i>
+        </button>
+    </header>
+
+    <!-- Seção sobre empregabilidade no campo -->
+    <section class="campo-section">
+        <h2 class="carrossel-titulo">Empregabilidade no Campo</h2>
+        <div class="button-container">
+            <a href="campo.html"><img src="https://s2-g1.glbimg.com/j--Wv7ZBukPbQi5tQJNTlx829cQ=/0x33:798x461/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2021/4/S/3iME6IRdqtqNsLEoqBpg/foto-4.jpg" alt="Empregabilidade no Campo"></a>
+            <div class="veja-mais"><a href="campo.html">Veja mais</a></div>
+        </div>
+    </section>
+
+    <!-- Seção sobre empregabilidade na cidade -->
+    <section class="cidade-section">
+        <h2 class="carrossel-titulo">Empregabilidade na Cidade</h2>
+        <div class="button-container">
+            <a href="cidade.html"><img src="https://fia.com.br/wp-content/uploads/2019/03/empregabilidade-bases.jpg" alt="Empregabilidade na Cidade"></a>
+            <div class="veja-mais"><a href="cidade.html">Veja mais</a></div>
+        </div>
+    </section>
+
+    <footer class="rodape">
+        <div class="links">
+            <ul>
+                <li><a href="#">Início</a></li>
+            </ul>
+            <ul>
+                <li><a href="https://www.sistemafaep.org.br/agrinho/" target="_blank">Agrinho</a></li>
+            </ul>
+            <ul class="social-links">
+                <li><a href="https://github.com/JoaoJanowski" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+                <li><a href="https://www.instagram.com/accounts/onetap/?next=%2F&hl=pt" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="glider.min.js"></script>
+    <script src="index.js"></script>
 </body>
+</html>
