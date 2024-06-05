@@ -1,71 +1,49 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>tabela</title>
+<title>Popup Window Example</title>
 <style>
-  table {
-    border-collapse: collapse;
-    width: 100%;
-  }
-  th, td {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-  }
-  th {
-    background-color: #f2f2f2;
-  }
+/* Estilos para o botão "Ver mais" */
+.more-button {
+  background-color: #4CAF50; /* Cor de fundo */
+  color: white; /* Cor do texto */
+  padding: 10px 20px; /* Espaçamento interno */
+  border: none; /* Sem borda */
+  border-radius: 5px; /* Borda arredondada */
+  cursor: pointer; /* Cursor ao passar por cima */
+  transition: background-color 0.3s; /* Transição suave da cor de fundo */
+}
+
+/* Estilo quando o cursor está sobre o botão */
+.more-button:hover {
+  background-color: #45a049; /* Cor de fundo mais escura */
+}
 </style>
 </head>
 <body>
 
-<table id="minhaTabela">
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Idade</th>
-      <th>email</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td></td>
-      <td>25</td>
-      <td>São Paulo</td>
-    </tr>
-    <tr>
-      <td>Maria</td>
-      <td>30</td>
-      <td>Rio de Janeiro</td>
-    </tr>
-    <tr>
-      <td>Carlos</td>
-      <td>35</td>
-      <td>Brasília</td>
-    </tr>
-  </tbody>
-</table>
+<!-- Botão "Ver mais" -->
+<button class="more-button" onclick="openPopup()">Ver mais</button>
+
+<!-- Janela flutuante -->
+<div id="popup" class="popup">
+  <h2>Conteúdo adicional</h2>
+  <p>Aqui está mais conteúdo...</p>
+  <button onclick="closePopup()">Fechar</button>
+</div>
 
 <script>
-  // JavaScript para adicionar uma linha à tabela
-  function adicionarLinha() {
-    var table = document.getElementById("minhaTabela").getElementsByTagName('tbody')[0];
-    var newRow = table.insertRow(table.rows.length);
-    var cells = [];
+function openPopup() {
+  document.getElementById('popup').style.display = 'block';
+}
 
-    for (var i = 0; i < 3; i++) {
-      cells.push(newRow.insertCell(i));
-    }
-
-    cells[0].innerHTML = "Novo Nome";
-    cells[1].innerHTML = "40";
-    cells[2].innerHTML = "Nova Cidade";
-  }
+function closePopup() {
+  document.getElementById('popup').style.display = 'none';
+}
 </script>
-
-<button onclick="adicionarLinha()">Adicionar Linha</button>
 
 </body>
 </html>
