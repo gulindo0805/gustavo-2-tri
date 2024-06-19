@@ -1,78 +1,349 @@
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empregabilidade: Do Campo à Cidade</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <link rel="stylesheet" href="agrinho.css">
-</head>
-<body>
-    <header id="cabecalho" class="cabecalho">
-        <!-- Carrossel no cabeçalho -->
-        <div class="cabecalho-carrossel">
-            <div class="carrossel" id="carrosselCabecalho">
-                <!-- Slides do carrossel -->
-                <div class="carrossel-item">
-                    <img src="https://s2-techtudo.glbimg.com/SSAPhiaAy_zLTOu3Tr3ZKu2H5vg=/0x0:1024x609/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2022/c/u/15eppqSmeTdHkoAKM0Uw/dall-e-2.jpg" alt="Imagem 1">
-                </div>
-                <div class="carrossel-item">
-                    <img src="https://amazonasfc.com.br/wp-content/uploads/2023/04/logo-amazonasfc.png" alt="Imagem 2">
-                </div>
-                <div class="carrossel-item">
-                    <img src="https://veja.abril.com.br/wp-content/uploads/2023/10/Amazonas-FC-3.jpg?quality=90&strip=info&w=720&h=440&crop=1" alt="Imagem 3">
-                </div>
-            </div>
-        </div>
-        <!-- Fim do Carrossel no cabeçalho -->
 
-        <!-- Restante do cabeçalho -->
-        <nav class="cabecalho-nav">
-            <ul class="cabecalho-lista">
-                <li class="cabecalho-lista-item"><a href="#">Home</a></li>
-                <li class="cabecalho-lista-item"><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
-        <button class="nav-button" onclick="openNav()">
-            <i class="fa-solid fa-bars fa-2x"></i>
-        </button>
-    </header>
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,600;1,600&display=swap');
 
-    <!-- Seção sobre empregabilidade no campo -->
-    <section class="campo-section">
-        <h2 class="carrossel-titulo">Empregabilidade no Campo</h2>
-        <div class="button-container">
-            <a href="campo.html"><img src="https://s2-g1.glbimg.com/j--Wv7ZBukPbQi5tQJNTlx829cQ=/0x33:798x461/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2021/4/S/3iME6IRdqtqNsLEoqBpg/foto-4.jpg" alt="Empregabilidade no Campo"></a>
-            <div class="veja-mais"><a href="campo.html">Veja mais</a></div>
-        </div>
-    </section>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <!-- Seção sobre empregabilidade na cidade -->
-    <section class="cidade-section">
-        <h2 class="carrossel-titulo">Empregabilidade na Cidade</h2>
-        <div class="button-container">
-            <a href="cidade.html"><img src="https://fia.com.br/wp-content/uploads/2019/03/empregabilidade-bases.jpg" alt="Empregabilidade na Cidade"></a>
-            <div class="veja-mais"><a href="cidade.html">Veja mais</a></div>
-        </div>
-    </section>
+body {
+    font-family: 'Outfit', sans-serif;
+}
 
-    <footer class="rodape">
-        <div class="links">
-            <ul>
-                <li><a href="#">Início</a></li>
-            </ul>
-            <ul>
-                <li><a href="https://www.sistemafaep.org.br/agrinho/" target="_blank">Agrinho</a></li>
-            </ul>
-            <ul class="social-links">
-                <li><a href="https://github.com/JoaoJanowski" target="_blank"><i class="fa-brands fa-github"></i></a></li>
-                <li><a href="https://www.instagram.com/accounts/onetap/?next=%2F&hl=pt" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
-            </ul>
-        </div>
-    </footer>
+/* Estilos do cabeçalho */
 
-    <script src="glider.min.js"></script>
-    <script src="index.js"></script>
-</body>
-</html>
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 90px;
+    background-color: #135B2B;
+    color: #f1f1f1;
+}
+
+.cabecalho-nav {
+    display: flex;
+    gap: 30px;
+}
+
+.cabecalho-lista-item {
+    font-size: 14px;
+}
+
+.cabecalho-lista a {
+    color: #f1f1f1;
+    text-decoration: none;
+}
+
+.cabecalho-lista a:hover {
+    transition: .2s;
+    cursor: pointer;
+    color: #d1d1d1;
+}
+
+/* Carrossel no cabeçalho */
+
+.cabecalho-carrossel {
+    width: 100%;
+    height: 400px; /* Ajuste conforme necessário */
+    overflow: hidden;
+}
+
+.cabecalho-carrossel .carrossel-item {
+    width: 100%;
+    height: 100%;
+}
+
+.cabecalho-carrossel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Estilize conforme necessário */
+
+/* Estilos dos carrosséis de empregabilidade */
+
+.carrossel-section {
+    padding: 50px 0;
+}
+
+.carrossel-titulo {
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.carrossel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.carrossel-item {
+    flex: 0 0 auto;
+    width: 80%;
+    scroll-snap-align: start;
+    margin-right: 20px;
+    position: relative;
+}
+
+.carrossel-item:last-child {
+    margin-right: 0;
+}
+
+.carrossel-legenda {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Estilos do rodapé */
+
+.rodape {
+    background-color: #c7c3c3;
+    padding: 40px 0 20px 0;
+}
+
+.links {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.links ul {
+    list-style: none;
+}
+
+.links a {
+    text-decoration: none;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    font-size: 25px;
+}
+
+.rodape p {
+    text-align: center;
+}
+
+.rodape a {
+    text-decoration: none;
+    color: #000;
+}
+
+.rodape a:hover {
+    transition: .2s;
+    color: #5a5a5a;
+}
+
+/* Estilos responsivos */
+
+@media screen and (max-width: 768px) {
+    .cabecalho {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cabecalho-nav {
+        margin-top: 20px;
+    }
+
+    .cabecalho-nav .cabecalho-lista {
+        flex-direction: column;
+    }
+
+    .cabecalho-nav .cabecalho-lista-item {
+        margin-bottom: 10px;
+    }
+
+    .cabecalho-carrossel {
+        height: 300px; /* Ajuste conforme necessário */
+    }
+
+    .carrossel-item {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .cabecalho {
+        padding: 5px 10px;
+    }
+
+    .cabecalho-nav {
+        display: none;
+    }
+
+    .nav-button {
+        display: block;
+    }
+
+    .carrossel-item {
+        width: 60%;
+    }
+
+    .rodape .links {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .rodape .social-links {
+        justify-content: center;
+    }
+}
+.botao {
+    display: inline-block;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.botao:hover {
+    background-color: black;
+    color: black;
+    border: 2px solid #4CAF50;
+}
+.campo-section img, .cidade-section img {
+    width: 600px;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+} .campo-section img, .cidade-section img {
+    width: 600px;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+.veja-mais {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.veja-mais a {
+    text-decoration: none;
+    color: green;
+    font-weight: bold;
+}
+.retangulo-grande {
+    background-color: #eaeaea; /* Cor de fundo do retângulo */
+    padding: 20px; /* Espaçamento interno */
+    margin-top: 20px; /* Espaço superior */
+    margin-bottom: 20px; /* Espaço inferior */
+    width: 100%; /* Largura total */
+    height: 600px; /* Altura do retângulo */
+    text-align: center; /* Centralizar conteúdo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row; /* Alinhamento horizontal */
+}
+
+.quadrado-imagem {
+    width: 400px; /* Largura do quadrado */
+    height: 400px; /* Altura do quadrado */
+    background-color: lightblue; /* Cor de fundo do quadrado */
+    margin-right: 20px; /* Espaçamento à direita */
+}
+
+.carros {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+}
+.campo-section img, .cidade-section img {
+    width: 200px;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.veja-mais {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.veja-mais a {
+    text-decoration: none;
+    color: green; /* Alteração para verde */
+    font-weight: bold;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.button-container > div {
+    max-width: 200px;
+    text-align: center;
+    flex: 1;
+}
+ .carrossel-item img {
+        width: 100%;
+        height: auto;
+    }
+    .button-container img {
+        width: 100%;
+        height: auto;
+    }
+    .button-container div {
+        flex: 1;
+        margin: 10px;
+    }
+    .button-container {
+        display: flex;
+        justify-content: space-around;
+    }
+// <uniquifier>: Use a unique and descriptive class name
+.importe {
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+
+
+.imagem-rodape {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.imagem-rodape img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
