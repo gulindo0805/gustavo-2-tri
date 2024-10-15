@@ -1,81 +1,197 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empregabilidade: Do Campo à Cidade</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <link rel="stylesheet" href="agrinho.css">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Receitas Globo</title>
+    
+    <script>
+        (function(d, p, s){
+            d.addEventListener('DOMContentLoaded', () => {
+                d.querySelectorAll(`[${p}-${s}]`).forEach(e => {
+                    e.setAttribute(s, e.getAttribute(`${p}-${s}`));
+                    e.removeAttribute(`${p}-${s}`);
+                });
+            });
+        })(document, 'codex', 'href');
+    </script>
+    
     <style>
-        .imagem-container {
-            width: 300px;
-            height: 300px;
-            overflow: hidden;
-            margin-bottom: 10px;
+        .content-blockquote {
+            border-left: 4px solid #ffc700;
         }
-        .imagem-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .imagem-texto {
-            text-align: center;
-            background-color: #f0f0f0;
-            padding: 5px;
+        #quote-image {
+            fill: #ffc700;
         }
     </style>
 </head>
 <body>
-    <!-- Conteúdo principal -->
-    <div class="conteudo">
-        <h1>Empregabilidade: Do Campo à Cidade</h1>
-        
-        <!-- Seção das imagens abaixo do rodapé -->
-        <div class="imagens-rodape">
-            <div class="imagem-container">
-                <a href="Ksksk.html"><img src="caminho-da-imagem1.jpg"></a>
-                <div class="imagem-texto">Texto1</div>
+    <div id="glb-topo" class="glb-topo" data-clarity-mask="true" aria-hidden="true"></div>
+    
+    <header class="codex-header header" data-header="codex" data-analytics="T" data-clarity-mask="true">
+        <a class="codex-link codex-link--medium codex-link--standalone codex-header__skip" href="#main">Pular para o conteúdo</a>
+        <div class="codex-header__before">
+            <div class="glbbarrawidget header__barraglobo" id="glbbarrawidget" data-clarity-mask="true"></div>
+        </div>
+        <div class="codex-header__main">
+            <div class="codex-header__slot">
+                <button class="header__menu-trigger" id="openMenu" aria-label="Menu">
+                    <span class="header__menu-icon" aria-hidden="true">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                    <span class="header__menu-label">Menu</span>
+                </button>
             </div>
-            <div class="imagem-container">
-                <a href="kkk"><img src="caminho-da-imagem2.jpg"></a>
-                <div class="imagem-texto">Texto2</div>
+            <div class="codex-header__slot">
+                <a class="header__logo-area" id="main-logo" href="https://receitas.globo.com/" title="Receitas">
+                    <h1 class="header__logo">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 180 30">
+                            <g fill="#A5147D" fill-rule="evenodd">
+                                <path d="M27.136 18.23c-.29 10.128-4.2 11.77-6.473 11.77-2.272 0-6.187-1.642-6.473-11.77a1.186 1.186 0 011.182-1.218h10.582c.665 0 1.2.554 1.182 1.218zM15.388 2.865c10.129.288 11.77 4.198 11.77 6.472 0 2.273-1.642 6.188-11.77 6.472a1.186 1.186 0 01-1.22-1.182V4.047c0-.666.555-1.202 1.22-1.182zM1.181 30h10.627a1.18 1.18 0 001.18-1.18V18.191a1.18 1.18 0 00-1.18-1.18H1.18A1.18 1.18 0 000 18.192V28.82C0 29.471.529 30 1.18 30zm0-14.169h10.627a1.18 1.18 0 001.18-1.18V4.023a1.18 1.18 0 00-1.18-1.181H1.18A1.18 1.18 0 000 4.023V14.65c0 .652.529 1.181 1.18 1.181zM53.023 7.82v6.398c-4.302 0-6.612 1.564-6.612 4.408v7.607h-4.052V8.105h4.052v4.514c1.422-2.986 3.733-4.799 6.612-4.799zM58.674 15.605h11.161c-.711-1.956-2.915-3.164-5.616-3.164-2.666 0-4.799 1.244-5.545 3.164zm15.213 3.092h-15.25c.747 1.955 2.845 3.2 5.724 3.2 2.132 0 4.016-.605 4.834-1.387h4.479c-1.35 3.661-4.977 6.15-9.42 6.15-5.616 0-9.81-4.088-9.81-9.491s4.194-9.491 9.775-9.491c5.58 0 9.774 4.052 9.774 9.598 0 .462-.035.995-.106 1.421zM75.947 17.169c0-5.403 4.195-9.49 9.776-9.49 4.905 0 8.78 3.198 9.561 7.713h-4.407c-.817-1.529-2.808-2.524-5.154-2.524-3.2 0-5.58 1.848-5.58 4.3 0 2.454 2.38 4.302 5.58 4.302 2.346 0 4.337-.996 5.154-2.524h4.407c-.782 4.514-4.656 7.714-9.561 7.714-5.58 0-9.776-4.088-9.776-9.491zM101.397 15.605h11.161c-.711-1.956-2.915-3.164-5.616-3.164-2.666 0-4.799 1.244-5.545 3.164zm15.214 3.092h-15.25c.747 1.955 2.844 3.2 5.723 3.2 2.133 0 4.017-.605 4.834-1.387h4.479c-1.35 3.661-4.977 6.15-9.42 6.15-5.616 0-9.81-4.088-9.81-9.491s4.194-9.491 9.775-9.491c5.58 0 9.774 4.052 9.774 9.598 0 .462-.035.995-.105 1.421zM119.737 26.233h4.052V8.105h-4.052v18.128zm-1.244-23.39c0-1.599 1.422-2.843 3.27-2.843 1.884 0 3.305 1.244 3.305 2.844 0 1.635-1.421 2.879-3.305 2.879-1.848 0-3.27-1.244-3.27-2.88zM134.132 13.188v6.149c0 1.209.747 1.778 2.31 1.778h2.596v5.118h-3.057c-3.91 0-5.937-1.884-5.937-5.652v-7.393h-3.519V8.105h3.519V3.91l4.088-1.138v5.332h5.261v5.083h-5.261zM156.277 17.169c0-2.453-2.382-4.302-5.581-4.302-3.199 0-5.545 1.85-5.545 4.302 0 2.453 2.346 4.3 5.545 4.3s5.581-1.847 5.581-4.3zm4.052-9.064v18.128h-4.052v-3.626c-1.351 2.489-3.662 4.053-6.612 4.053-4.976 0-8.744-4.088-8.744-9.491s3.768-9.49 8.744-9.49c2.95 0 5.261 1.563 6.612 4.051V8.105h4.052zM163.348 20.12h3.982c0 1.137 1.848 1.99 4.408 1.99 2.523 0 4.265-.64 4.265-1.529 0-.96-2.169-1.315-5.404-1.706-3.66-.427-6.966-1.955-6.966-5.438 0-3.768 3.697-5.759 7.998-5.759 4.621 0 8.068 2.773 8.068 6.292h-4.016c0-.996-1.777-1.742-4.088-1.742-2.346 0-3.945.569-3.945 1.386 0 .854 1.99 1.316 5.367 1.706 3.448.392 6.967 1.742 6.967 5.332 0 3.874-3.732 6.008-8.317 6.008-4.835 0-8.319-2.915-8.319-6.54z"/>
+                            </g>
+                        </svg>
+                    </h1>
+                </a>
             </div>
-            <div class="imagem-container">
-                <a href="Ksksk.html"><img src="caminho-da-imagem3.jpg"></a>
-                <div class="imagem-texto">Texto3</div>
+            <div class="codex-header__slot">
+                <button class="header__search-trigger" id="openSearch" aria-label="Buscar">
+                    <svg fill="#fff" class="search-icon" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                        <path d="M0 0h24v24H0z" fill="none"></path>
+                    </svg>
+                    <span class="header__search-label">Buscar</span>
+                </button>
+                <div class="header__search-area header__search" id="busca-padrao" data-clarity-mask="true" style="min-height: 33px"></div>
             </div>
         </div>
+    </header>
 
-    </div>
-
-    <!-- Rodapé -->
-    <footer class="rodape">
-        <div class="links">
-            <ul>
-                <li><a href="#">Início</a></li>
-            </ul>
-            <ul>
-                <li><a href="https://www.sistemafaep.org.br/agrinho/" target="_blank">Agrinho</a></li>
-            </ul>
-            <ul class="social-links">
-                <li><a href="https://github.com/JoaoJanowski" target="_blank"><i class="fa-brands fa-github"></i></a></li>
-                <li><a href="https://www.instagram.com/accounts/onetap/?next=%2F&hl=pt" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
-            </ul>
+    <main id="glb-main-home" class="glb-grid grid-24 large-22 large-offset-1 has-smart-container-ad" itemscope itemtype="http://schema.org/webpage">
+        <div class="row">
+            <div class="publicidade publicidade-banner_slb_topo">
+                <div id="banner_slb_topo">
+                    <div class="glb-skeleton-box" style="--skeleton-width: 100%; --skeleton-height: 100%;"></div>
+                </div>
+            </div>
         </div>
-    </footer>
-
-    <script src="glider.min.js"></script>
-    <script src="index.js"></script>
-    <script>
-        // Script para fazer o carrossel trocar de imagem a cada 5 segundos
-        const carrosselItems = document.querySelectorAll('.carrossel-item');
-        let index = 0;
-
-        setInterval(() => {
-            carrosselItems[index].style.display = 'none';
-            index = (index + 1) % carrosselItems.length;
-            carrosselItems[index].style.display = 'block';
-        }, 5000);
-    </script>
+        <script>
+            SETTINGS = window.SETTINGS || {};
+            SETTINGS.BASTIAN = SETTINGS.BASTIAN || {};
+            SETTINGS.BASTIAN['RECOMMENDATION_URL'] = "https://recomendacao.globo.com/v3/globocom/ab/";
+            SETTINGS.BASTIAN['HORIZON_HOST'] = "https://horizon.globo.com";
+            SETTINGS.BASTIAN['PORTAL'] = "receitas";
+            SETTINGS.BASTIAN['DEVICE_GROUP'] = "desktop";
+            SETTINGS.BASTIAN['PAGINABLE'] = true;
+            SETTINGS.BASTIAN['IS_FULL_FEED_SSR'] = true;
+            SETTINGS.BASTIAN['FULL_FEED_SSR_TYPE'] = "home";
+        </script>
+    </main>
 </body>
 </html>
+
+<script async src="https://p.glbimg.com/api/stable/api.min.js"></script>
+
+<script id="geo-tracking" type="text/javascript">
+  const isPreview = false;
+
+  var waitForGlobal = function(key, callback) {
+    if (window[key]) {
+      callback();
+    } else {
+      setTimeout(function() {
+        waitForGlobal(key, callback);
+      }, 1000);
+    }
+  };
+
+  let contentTypeApi = 'home-api';
+  if (contentTypeApi === 'multi-content') {
+    contentTypeApi = 'multicontent';
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    waitForGlobal('globoAB', function() {
+      waitForGlobal('buildGeoTrackingLoadUp', function() {
+        window.buildGeoTrackingLoadUp(
+          'https://globo-ab.globo.com',
+          false,
+          'receitas',
+          'desktop',
+          isPreview,
+          contentTypeApi
+        );
+      });
+    });
+  });
+</script>
+
+<div class="row medium-collapse large-uncollapse">
+  <div class="column small-24 medium-20 medium-offset-2 large-24 large-offset-0 xlarge-24 xlarge-offset-0">
+    <div class="row shopping">
+      <div class="column medium-centered">
+        <div id="banner_vitrine" class="shopping__widget"></div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      window.bannerVitrine = {
+        abEnv: 'prod',
+        wishlistTokenApi: 'https://wishlist-user-api.advertising.globo/wishlist/token',
+      };
+    </script>
+  </div>
+</div>
+
+<link data-src="https://s3.glbimg.com/cdn/libs/gui-lightbox/1.8.1/css/gui.lightbox.min.css" type="text/css" rel="stylesheet">
+
+<div class="home-area-bottom-main">
+  <div class="row">
+    <div class="xlarge-22 xlarge-offset-1">
+      <p>
+        Descubra um mundo de possibilidades aqui no Receitas. Torne-se um chef e reúna seus amigos e familiares para saborear. Com nossas dicas e variedade de receitas, podemos te ajudar a ter os melhores resultados.
+      </p>
+    </div>
+  </div>
+</div>
+
+<footer class="codex-footer">
+  <div class="codex-footer__container">
+    <nav class="codex-footer__product">
+      <div class="codex-footer__logo"></div>
+      <ul class="codex-footer__list"></ul>
+      <div class="codex-footer__audience">
+        <span class="codex-footnote">globo entretenimento</span>
+      </div>
+    </nav>
+    <div class="codex-footer__service">
+      <div class="codex-footer__copyright"></div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
