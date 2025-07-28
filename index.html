@@ -1075,3 +1075,226 @@ footer p {
         padding: 12px 25px;
     }
 }
+
+
+
+
+
+
+
+
+
+
+pedido novo    
+
+
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fazer Pedido - Minha Lanchonete/Pizzaria</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        
+        <nav>
+    <div class="logo">Minha Lanchonete</div>
+    <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="cardapio.html">Cardápio</a></li>
+        <li><a href="pedido.html">Fazer Pedido</a></li>
+        <li><a href="contato.html">Contato</a></li>
+    </ul>
+</nav>
+      
+    </header>
+
+    <main>
+        <section class="secao-pedidos">
+            <h1>Monte seu Pedido</h1>
+
+            <div class="categoria-pedido">
+                <h2>Pizzas</h2>
+                <div class="item-pedido" data-id="pizza-margherita" data-preco="32.00">
+                    <img src="https://via.placeholder.com/100x75" alt="Pizza Margherita">
+                    <div class="detalhes-item">
+                        <h3>Pizza Margherita</h3>
+                        <p>Molho de tomate, mussarela, manjericão fresco.</p>
+                        <span>R$ 32,00</span>
+                    </div>
+                    <div class="quantidade-controle">
+                        <button class="btn-menos">-</button>
+                        <input type="number" value="0" min="0" class="quantidade-input">
+                        <button class="btn-mais">+</button>
+                    </div>
+                </div>
+                <div class="item-pedido" data-id="pizza-calabresa" data-preco="35.00">
+                    <img src="https://via.placeholder.com/100x75" alt="Pizza Calabresa">
+                    <div class="detalhes-item">
+                        <h3>Pizza Calabresa</h3>
+                        <p>Mussarela, calabresa fatiada, cebola e orégano.</p>
+                        <span>R$ 35,00</span>
+                    </div>
+                    <div class="quantidade-controle">
+                        <button class="btn-menos">-</button>
+                        <input type="number" value="0" min="0" class="quantidade-input">
+                        <button class="btn-mais">+</button>
+                    </div>
+                </div>
+                </div>
+
+            <div class="categoria-pedido">
+                <h2>Lanches</h2>
+                <div class="item-pedido" data-id="x-bacon" data-preco="25.00">
+                    <img src="https://via.placeholder.com/100x75" alt="X-Bacon">
+                    <div class="detalhes-item">
+                        <h3>X-Bacon</h3>
+                        <p>Hambúrguer, queijo, bacon, alface, tomate e maionese.</p>
+                        <span>R$ 25,00</span>
+                    </div>
+                    <div class="quantidade-controle">
+                        <button class="btn-menos">-</button>
+                        <input type="number" value="0" min="0" class="quantidade-input">
+                        <button class="btn-mais">+</button>
+                    </div>
+                </div>
+                </div>
+
+            <div class="categoria-pedido">
+                <h2>Bebidas</h2>
+                <div class="item-pedido" data-id="refrigerante-lata" data-preco="6.00">
+                    <img src="https://via.placeholder.com/75x75" alt="Refrigerante Lata">
+                    <div class="detalhes-item">
+                        <h3>Refrigerante Lata</h3>
+                        <p>Coca-Cola, Guaraná, Soda.</p>
+                        <span>R$ 6,00</span>
+                    </div>
+                    <div class="quantidade-controle">
+                        <button class="btn-menos">-</button>
+                        <input type="number" value="0" min="0" class="quantidade-input">
+                        <button class="btn-mais">+</button>
+                    </div>
+                </div>
+                </div>
+
+            <div class="resumo-pedido">
+                <h2>Seu Pedido</h2>
+                <ul id="lista-pedido">
+                    <li class="mensagem-vazio">Seu carrinho está vazio.</li>
+                </ul>
+                <p class="total-pedido">Total: <span id="valor-total">R$ 0,00</span></p>
+                <button class="btn" id="btn-finalizar-pedido" disabled>Finalizar Pedido</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Minha Lanchonete/Pizzaria. Todos os direitos reservados.</p>
+        <div class="redes-sociais">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript para gerenciar o pedido (simplificado para demonstração)
+        document.addEventListener('DOMContentLoaded', () => {
+            const itensPedido = {}; // Armazena os itens e quantidades
+            const listaPedido = document.getElementById('lista-pedido');
+            const valorTotalSpan = document.getElementById('valor-total');
+            const btnFinalizarPedido = document.getElementById('btn-finalizar-pedido');
+
+            function atualizarResumoPedido() {
+                let total = 0;
+                listaPedido.innerHTML = ''; // Limpa a lista atual
+
+                let temItem = false;
+                for (const id in itensPedido) {
+                    const item = itensPedido[id];
+                    if (item.quantidade > 0) {
+                        temItem = true;
+                        const li = document.createElement('li');
+                        li.innerHTML = `${item.nome} (x${item.quantidade}) - R$ ${(item.quantidade * item.preco).toFixed(2).replace('.', ',')}`;
+                        listaPedido.appendChild(li);
+                        total += item.quantidade * item.preco;
+                    }
+                }
+
+                if (!temItem) {
+                    const liVazio = document.createElement('li');
+                    liVazio.classList.add('mensagem-vazio');
+                    liVazio.textContent = 'Seu carrinho está vazio.';
+                    listaPedido.appendChild(liVazio);
+                }
+
+                valorTotalSpan.textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
+                btnFinalizarPedido.disabled = !temItem; // Habilita/desabilita botão
+            }
+
+            document.querySelectorAll('.item-pedido').forEach(itemDiv => {
+                const itemId = itemDiv.dataset.id;
+                const itemNome = itemDiv.querySelector('h3').textContent;
+                const itemPreco = parseFloat(itemDiv.dataset.preco);
+                const quantidadeInput = itemDiv.querySelector('.quantidade-input');
+                const btnMenos = itemDiv.querySelector('.btn-menos');
+                const btnMais = itemDiv.querySelector('.btn-mais');
+
+                itensPedido[itemId] = {
+                    nome: itemNome,
+                    preco: itemPreco,
+                    quantidade: 0
+                };
+
+                btnMenos.addEventListener('click', () => {
+                    let quantidade = parseInt(quantidadeInput.value);
+                    if (quantidade > 0) {
+                        quantidade--;
+                        quantidadeInput.value = quantidade;
+                        itensPedido[itemId].quantidade = quantidade;
+                        atualizarResumoPedido();
+                    }
+                });
+
+                btnMais.addEventListener('click', () => {
+                    let quantidade = parseInt(quantidadeInput.value);
+                    quantidade++;
+                    quantidadeInput.value = quantidade;
+                    itensPedido[itemId].quantidade = quantidade;
+                    atualizarResumoPedido();
+                });
+
+                quantidadeInput.addEventListener('change', () => {
+                    let quantidade = parseInt(quantidadeInput.value);
+                    if (isNaN(quantidade) || quantidade < 0) {
+                        quantidade = 0;
+                    }
+                    quantidadeInput.value = quantidade;
+                    itensPedido[itemId].quantidade = quantidade;
+                    atualizarResumoPedido();
+                });
+            });
+
+            btnFinalizarPedido.addEventListener('click', () => {
+                // Armazena o pedido no localStorage (para simular a passagem entre páginas)
+                const pedidoParaFinalizar = {};
+                for (const id in itensPedido) {
+                    if (itensPedido[id].quantidade > 0) {
+                        pedidoParaFinalizar[id] = itensPedido[id];
+                    }
+                }
+                localStorage.setItem('pedidoAtual', JSON.stringify(pedidoParaFinalizar));
+                window.location.href = 'concluir_pedido.html'; // Redireciona para a página de conclusão
+            });
+
+            atualizarResumoPedido(); // Inicializa o resumo do pedido
+        });
+    </script>
+</body>
+</html>
+
+
+
